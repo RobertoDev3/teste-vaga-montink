@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Teste Técnico Montink
 
-## Getting Started
+Esse repositório contém a implementação do teste técnico para a vaga de Front-end na Montink. Aqui você encontra uma página de produto de e‑commerce, desenvolvida com foco em flexibilidade, performance e experiência do usuário.
 
-First, run the development server:
+[👉 Acesse a demonstração do projeto aqui](https://teste-vaga-montink.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tecnologias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** (React + SSR)
+- **TypeScript**
+- **Tailwind CSS**
+- **API ViaCEP** para consulta de CEP
+- **localStorage** para persistência de estado (15 minutos)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Galeria de Imagens**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Imagem principal (35% da largura)
+   - Miniaturas clicáveis que atualizam a imagem principal
+   - Zoom interativo ao passar o mouse sobre a imagem principal
 
-## Deploy on Vercel
+2. **Detalhes do Produto**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - Título e preço formatado em moeda BRL
+   - Seletores dinâmicos de variantes (tamanho e cor)
+   - Exibição de opções esgotadas (`(Esgotado)`) e `disabled` quando fora de estoque
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Consulta de Frete**
+
+   - Campo de CEP com máscara `00000-000`
+   - Validação de formato e chamada à API ViaCEP
+   - Exibição automática do endereço completo se o CEP existir
+
+4. **Persistência de Estado**
+
+   - Todas as seleções do usuário (imagem, variante, CEP, endereço) são salvas em `localStorage`
+   - Expiração automática após 15 minutos do último movimento do usuário
+
+---
+
+## 🛠️ Como Executar
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/teste-vaga-montink.git
+   ```
+
+2. Entre na pasta do projeto:
+
+   ```bash
+   cd teste-vaga-montink
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   yarn install
+   ```
+
+4. Inicie em modo de desenvolvimento:
+
+   ```bash
+   yarn dev
+   ```
+
+5. Acesse `http://localhost:3000` no seu navegador.
